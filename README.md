@@ -22,6 +22,11 @@ You can keep your virtual environment updated by installing the latest packages 
 pip install -r requirements.txt
 ```
 
+Run the following commands once you have updated your packages:
+```
+pre-commit install
+```
+
 The following git commands are the only ones you need to worry about:
 ```
 git checkout -b <my-branch>
