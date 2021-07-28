@@ -29,6 +29,8 @@ pre-commit install
 
 The following git commands are the only ones you need to worry about:
 ```
+git branch -va
+git status
 git checkout -b <my-branch>
 git add .
 git commit -m "<add commit message here>"
