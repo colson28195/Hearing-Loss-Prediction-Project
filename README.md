@@ -37,5 +37,6 @@ git commit -m "<add commit message here>"
 git push origin <my-branch>
 git checkout main
 git pull origin main
+git merge main
 ```
 Please ask for assistance to get into a habit of using these correctly if unsure.
