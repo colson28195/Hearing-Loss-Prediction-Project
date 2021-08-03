@@ -4,7 +4,7 @@ import pandas as pd
 def import_data(dataset):
     """
     Imports the provided data as pandas dataframes from the data folder
-    
+
     Contributors:
     - Daniel
     """
@@ -14,7 +14,7 @@ def import_data(dataset):
 def clean_nan(dataset):
     """
     Removes the empty columns from the provided data
-    
+
     Contributors:
     - Daniel
     """
