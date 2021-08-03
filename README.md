@@ -1,6 +1,15 @@
 # Tytonidae Tympanometry (TyTy)
 
 
+## Running Code
+To run code in your own file, execute the following (you must be in the top level of the directory, so just inside the tytonidae-tympanometry not inside any other directory):
+```
+python -m daniel.develop
+```
+The same way the actual code can be run as:
+```
+python -m tyty.processing
+```
 
 ## Admin Steps
 Change to where you want the repository to be and run the following command to get started:
