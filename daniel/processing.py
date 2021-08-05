@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def import_data(dataset):
     """
     Imports the provided data as pandas dataframes from the data folder
@@ -7,7 +8,7 @@ def import_data(dataset):
     return pd.read_csv("data/" + dataset + ".csv")
 
 
-def clean_nan(dataset):
+def clean_empty(dataset):
     """
     Removes the empty columns from the provided data
     """
