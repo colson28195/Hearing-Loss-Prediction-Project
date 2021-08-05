@@ -20,7 +20,7 @@ def remove_columns(dataset, columns=[]):
     """
     Removes unnecessary columns from the data
     """
-    removals = [col for col in dataset.columns if 'Unnamed' in col] + columns
+    removals = [col for col in dataset.columns if "Unnamed" in col] + columns
     dataset.drop(columns=removals, inplace=True)
     return True
 
@@ -29,10 +29,10 @@ def combine_data(data, demo):
     """
     Fixes columns and then combines them
     """
-    demo['EarSide'] = ([0] * 120) + ([1] * 119)
-    data['EarSide'] = data['EarSide'].map({"Left": 0, "Right": 1})
+    demo["EarSide"] = ([0] * 120) + ([1] * 119)
+    data["EarSide"] = data["EarSide"].map({"Left": 0, "Right": 1})
     data.rename(columns={"Participant ID": "Subject"}, inplace=True)
-    return demo.merge(data, on=['Subject', 'EarSide'], how='inner')
+    return demo.merge(data, on=["Subject", "EarSide"], how="inner")
 
 
 def run_pipeline():
@@ -46,7 +46,7 @@ def run_pipeline():
     clean_empty(demo)
 
     remove_columns(demo)
-    remove_columns(data, ['Gender'])
+    remove_columns(data, ["Gender"])
 
     combined = combine_data(data, demo)
 
@@ -57,6 +57,6 @@ def split_target(data, feature_columns=[]):
     """
     Splits the target and the relevant features out
     """
-    target = data['OverallPoF']
-    features = data[[col for col in data.columns if 'f(' in col] + feature_columns]
+    target = data["OverallPoF"]
+    features = data[[col for col in data.columns if "f(" in col] + feature_columns]
     return features, target

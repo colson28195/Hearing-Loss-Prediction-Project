@@ -29,7 +29,7 @@ def remove_columns(dataset, columns=[]):
     Contributors:
     - Daniel
     """
-    removals = [col for col in dataset.columns if 'Unnamed' in col] + columns
+    removals = [col for col in dataset.columns if "Unnamed" in col] + columns
     dataset.drop(columns=removals, inplace=True)
     return True
 
@@ -41,7 +41,7 @@ def combine_data(data, demo):
     Contributors:
     - Daniel
     """
-    demo['EarSide'] = ([0] * 120) + ([1] * 119)
-    data['EarSide'] = data['EarSide'].map({"Left": 0, "Right": 1})
+    demo["EarSide"] = ([0] * 120) + ([1] * 119)
+    data["EarSide"] = data["EarSide"].map({"Left": 0, "Right": 1})
     data.rename(columns={"Participant ID": "Subject"}, inplace=True)
-    return demo.merge(data, on=['Subject', 'EarSide'], how='inner')
+    return demo.merge(data, on=["Subject", "EarSide"], how="inner")

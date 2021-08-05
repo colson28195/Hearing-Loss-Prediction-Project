@@ -1,5 +1,6 @@
 from tyty import processing
 
+
 def run_pipeline():
     """
     Runs the processing pipeline
@@ -14,7 +15,7 @@ def run_pipeline():
     processing.clean_empty(demo)
 
     processing.remove_columns(demo)
-    processing.remove_columns(data, ['Gender'])
+    processing.remove_columns(data, ["Gender"])
 
     combined = processing.combine_data(data, demo)
 
@@ -28,6 +29,6 @@ def split_target(data, feature_columns=[]):
     Contributors:
     - Daniel
     """
-    target = data['OverallPoF']
-    features = data[[col for col in data.columns if 'f(' in col] + feature_columns]
+    target = data["OverallPoF"]
+    features = data[[col for col in data.columns if "f(" in col] + feature_columns]
     return features, target
