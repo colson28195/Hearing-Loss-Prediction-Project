@@ -1,9 +1,8 @@
-from data_processing import clean_nan
-from data_processing import import_data
+from tyty import processing
 
 
-data = clean_nan(import_data("data"))
-demo = clean_nan(import_data("demographics"))
+data = processing.clean_nan(processing.import_data("data"))
+demo = processing.clean_nan(processing.import_data("demographics"))
 
 print(data.head())
 print(demo.head())
