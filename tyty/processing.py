@@ -11,7 +11,7 @@ def import_data(dataset):
     return pd.read_csv("data/" + dataset + ".csv")
 
 
-def clean_nan(dataset):
+def clean_empty(dataset):
     """
     Removes the empty columns from the provided data
 
