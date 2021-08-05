@@ -13,10 +13,10 @@ AgeY, FLOAT, [7.75 - 10.75]
 Grade, INT, [3 - 4]
 Eth1, CHAR, ['Australian' 'Australia' 'Caucasian' 'Thai' 'African/Australian' 'English' 'Srilankan' 'Aboriginal' 'European' 'Indian' 'Iran' 'Vietnamese' 'Asian' 'Scottis' 'American/Filipino' 'Maori' 'Anglosaxon' 'Eurasian', NaN]
 Eth2, CHAR, ['English' 'Anglo saxon' 'Danish' 'Aborigianal' 'Australian' 'British' 'Chinese' 'Maori' 'Chinese/Australian' 'Euro', NaN]
-Unnamed: 15, ???,
+Unnamed: 15, TO DELETE
 Lang1, CHAR, ['English' 'Chinese' 'Gujrati' 'Spanish' 'Malayalam' 'Cantonese', NaN]
 Lang2, CHAR, ['Chinese' 'Japanese' 'Thai' 'French' 'Hindi' 'Persian' 'Russian' 'Vietnamese' 'Singhalies' 'English' 'Hebrew', NaN]
-Unnamed: 19, ???,
+Unnamed: 19, TO DELETE
 PQMedDig, INT, [0 - 1, NaN]
 PQMedDiagSpef, CHAR, [..., NaN]
 PQR, INT, [0 - 1, NaN]
@@ -34,8 +34,8 @@ NGP, INT, [1 - 6]
 NN, INT, [1 - 6]
 SE, INT, [1 - 5]
 SM, INT, [1 - 5]
-Unnamed: 37, ???,
-Unnamed: 38, ???,
+Unnamed: 37, TO DELETE
+Unnamed: 38, TO DELETE
 LearnScore, FLOAT, [8.17 - 32.82]
 LearnScoreC, INT, [0 - 1]
 PTA0.5, INT, [20]
