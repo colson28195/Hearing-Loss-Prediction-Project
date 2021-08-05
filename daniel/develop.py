@@ -1,15 +1,13 @@
 import pandas as pd
 
-from tyty import processing
+from tyty import pipeline
+import daniel.processing as ps
 
 pd.set_option("display.max_rows", None)
 
-data = processing.clean_empty(processing.import_data("data"))
-demo = processing.clean_empty(processing.import_data("demographics"))
+result = pipeline.run_pipeline()
 
-# print(data.head())
-# print(demo.head())
-# print(data.dtypes)
-# print(demo.dtypes)
-# print(demo['PQMedDig'])
-# print(data.isna().any())
+features, target = ps.split_target(result, ['Gender', 'EarSide'])
+
+print(features.head())
+print(len(result))
