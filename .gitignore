@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 # MISC
+.DS_Store

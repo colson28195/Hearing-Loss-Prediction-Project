@@ -1,6 +1,15 @@
 # Tytonidae Tympanometry (TyTy)
 
 
+## Running Code
+To run code in your own file, execute the following (you must be in the top level of the directory, so just inside the tytonidae-tympanometry not inside any other directory):
+```
+python -m daniel.develop
+```
+The same way the actual code can be run as:
+```
+python -m tyty.processing
+```
 
 ## Admin Steps
 Change to where you want the repository to be and run the following command to get started:
@@ -17,26 +26,47 @@ This assumes that your Python command is ```python```, it may be ```python3```. 
 ```
 source venv/bin/activate
 ```
+On windows this becomes:
+```
+.\venv\Scripts\activate
+```
 You can keep your virtual environment updated by installing the latest packages from the requirements file:
 ```
 pip install -r requirements.txt
 ```
 
-Run the following commands once you have updated your packages:
+Run the following commands once, once you have updated your packages:
 ```
 pre-commit install
 ```
 
-The following git commands are the only ones you need to worry about:
+### Git Process
+Get the latest copy of the repo from GitHub
 ```
-git branch -va
-git status
-git checkout -b <my-branch>
-git add .
-git commit -m "<add commit message here>"
-git push origin <my-branch>
+git fetch
+```
+Update the ```main``` branch on your local machine
+```
 git checkout main
 git pull origin main
+```
+Update your local development branch with the latest work
+```
+git checkout <my-branch>
 git merge main
 ```
-Please ask for assistance to get into a habit of using these correctly if unsure.
+The steps above here are good to run on a regular basis/before making changes to make sure you are working on the latest version of the code.
+
+On your local development branch, make changes and write code, then state the changes, you can use ```git status``` to check where your changes are in the Git process.
+```
+git add .
+```
+Commit the staged changed
+```
+git commit -m "<my-commit-message>
+```
+Push the changes from your local machine to GitHub
+```
+git push origin <my-branch>
+```
+Go to GitHub and raise a Pull Request from your development branch to ```main```. Once this has been reviewed and approved by someone else, then start from the top again.
