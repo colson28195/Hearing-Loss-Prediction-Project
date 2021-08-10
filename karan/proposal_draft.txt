@@ -1,0 +1,74 @@
+## Project Title
+The Use of Machine Learning in Wideband Absorbance Data
+
+AIM & BACKGROUND & VALUE PROPOSITIONS
+Get more insights by people who attended the meeting to discuss keywords and terms to be used and give a general idea of the aim.
+
+Applying apply machine learning algorithms to analyse, interpret and classify wideband absorbance data(WBA), and diagnose the condition of the ears as normal or with conductive conditions. Moreover, a comparison will also be drawn between the numerous ML algorithms that will be run and their performance will also be tested against the current method being used which is ROC.
+
+DELIVERABLES & TIMELINE
+Get more insights by people who attended the meeting and what was agreed upon
+
+-	Discuss conventional tympanometry and WBA to provide more context to the project (research is required)
+-	Discuss the current method in classifying WBA data
+-	How ML tools are an improvement from ROC
+-	Challenges may be faced
+
+An automated machine learning tool that can use WBA data to diagnose ears as normal or with conductive conditions
+Features and advantages about the ML tool
+
+METHODS
+Assumptions that we are making.
+What sort of preprocessing we are doing and why.
+
+Describe the methods we shall be using and why - 
+1.SVM - This method creates an augmented line to classify 
+Disadvantages -
+Computationally expensive
+Advantages - 
+Better Prediction
+Flexibility in choosing the methods to apply prediction function
+
+2.Decisison Tree - Performs classification based on a series of situations in descending order of attribute hierarchy which is 
+derived using mathematical equations.
+Disadvantages - 
+Time complexity increases
+Advantages -
+Highly accurate in prediction
+Helps in containing the error rate(more transparent to evaluate best variables)
+
+3.Random Forrest - Multiple Decision trees run one after another, each time increasing the accuracy by learning from the previous trees.
+Disadvantages - 
+Time complexity is worse than than a decision tree
+Advantages - 
+Improves accuracy with each iteration of decision trees
+
+4.Logistic Regression - Uses odds ratio to classify outcomes. 
+Disadvantages - 
+Accuracy is not that high when compared to other models
+Advantages -
+Simple to implement 
+Less computationally expensive
+Usually works best when there 
+
+Run different models and compare results, choose the model with the highest accuracy to diagnose hearing issues
+
+PROJECT MANAGEMENT TIMELINE & COSTS
+Need to discuss how to articulate
+
+INDIVIDUAL REFLECTION & PLAN
+Need to be done by everybody
+
+
+
+
+Run different models and compare results, choose the model with the highest accuracy to diagnose ears.
+
+
+## Project Management Timeline & Costs
+GANTT chart needed for the team – need to decide whether we will use Excel or other automated GANTT chart platform
+The GANTT organises the progress of the project, including team meetings, client meetings, tasks and deadlines.
+Costs – estimation of manpower and salaries to maintain and update the ML tool.
+
+## Appendix
+To be completed by individuals.
