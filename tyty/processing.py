@@ -28,9 +28,6 @@ def remove_columns(dataset, columns=[]):
 
     Contributors:
     - Daniel
-
-    Doubt from KFR - Are we sure we would want to remove columns that are unnamed. 
-    We could just let them be for now unless Robyn did say something about them being completely useless?
     """
     removals = [col for col in dataset.columns if "Unnamed" in col] + columns
     dataset.drop(columns=removals, inplace=True)
