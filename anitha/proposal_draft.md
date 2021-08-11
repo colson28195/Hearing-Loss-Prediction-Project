@@ -1,6 +1,6 @@
 ## Background
-Understanding the data 
-- where was data collected (university audiology laboratory, Brisbane) 
+Understanding the data
+- where was data collected (university audiology laboratory, Brisbane)
 - how many ears studied (with & without OME)
 - tests performed : PTA (226Hz), WBT (226Hz to 8000Hz) / Pressure
 - feature columns including gender (male & female), age range, ethinicity

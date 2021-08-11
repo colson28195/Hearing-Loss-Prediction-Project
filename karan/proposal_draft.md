@@ -10,7 +10,7 @@ The middle ear function plays a critical role for hearing, where it transfers th
 This proposal addresses the limitation of current method used on WBT and proposes machine learning tools. The WBT data includes tests on frequencies from 250Hz to 8000Hz, which is currently analysed and modelled using ROC curve. The method is tedious and involves plenty of manual labelling and comparisons, which is not ideal in a busy clinical environment. Therefore, machine learning classifiers will help to resolve this problem by automatically detecting abnormal ear conditions with improved accuracy. This can help clinics to better incorporate WBT in diagnosing patients and reduce time in detecting abnormal conditions. Furthermore, machine learning tools are robust with pre-processing of WBT data and feature extraction, which will be able to take more data in the future and improve clinical efficiency.
 
 ## Value proposition
-Machine learning is useful in analysing patterns and making predictions. With a well-trained machine learning algorithm, analysis of WBT data can be improved significantly which in turn helps detect conductive conditions in ears with much more ease. 
+Machine learning is useful in analysing patterns and making predictions. With a well-trained machine learning algorithm, analysis of WBT data can be improved significantly which in turn helps detect conductive conditions in ears with much more ease.
 
 Here are the key benefits:
 1. Improve the accuracy in detecting ears with conductive conditions. The highest accuracy rate from the current method, receiver characteristics analysis, is only 74%. Machine learning classifiers will be trained and compared to find the most accurate one.
@@ -24,7 +24,7 @@ Here are the key benefits:
 Assumptions that we are making.
 What sort of preprocessing we are doing and why.
 
-Few of the Machine Learning algorithms that will be used in to analyse and predict outcomes mentioned below - 
+Few of the Machine Learning algorithms that will be used in to analyse and predict outcomes mentioned below -
 
 1. Support Vector Machines - SVM is a supervised learning model which performs classification by creating an augmented line to classify data. The aim is to map training data in such a way that the augmented line separating the different calsses is as wide as possible so that new data can be predicted by detecing which side of the line they would fall in. SVM is robust and has a range of functions to choose from and more often than not provides results with a higher accuracy however this comes at the cost of it being compuationally expensive.
 
