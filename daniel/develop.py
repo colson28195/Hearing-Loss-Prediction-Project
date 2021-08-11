@@ -9,5 +9,5 @@ result = pipeline.run_pipeline()
 
 features, target = ps.split_target(result, ["Gender", "EarSide"])
 
-print(features.head())
-print(len(result))
+# print(features.head())
+# print(len(result))

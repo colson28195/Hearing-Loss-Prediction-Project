@@ -35,35 +35,35 @@ METHODS
 Assumptions that we are making.
 What sort of preprocessing we are doing and why.
 
-Describe the methods we shall be using and why - 
-1.SVM - This method creates an augmented line to classify 
+Describe the methods we shall be using and why -
+1.SVM - This method creates an augmented line to classify
 Disadvantages -
 Computationally expensive
-Advantages - 
+Advantages -
 Better Prediction
 Flexibility in choosing the methods to apply prediction function
 
-2.Decisison Tree - Performs classification based on a series of situations in descending order of attribute hierarchy which is 
+2.Decisison Tree - Performs classification based on a series of situations in descending order of attribute hierarchy which is
 derived using mathematical equations.
-Disadvantages - 
+Disadvantages -
 Time complexity increases
 Advantages -
 Highly accurate in prediction
 Helps in containing the error rate(more transparent to evaluate best variables)
 
 3.Random Forrest - Multiple Decision trees run one after another, each time increasing the accuracy by learning from the previous trees.
-Disadvantages - 
+Disadvantages -
 Time complexity is worse than than a decision tree
-Advantages - 
+Advantages -
 Improves accuracy with each iteration of decision trees
 
-4.Logistic Regression - Uses odds ratio to classify outcomes. 
-Disadvantages - 
+4.Logistic Regression - Uses odds ratio to classify outcomes.
+Disadvantages -
 Accuracy is not that high when compared to other models
 Advantages -
-Simple to implement 
+Simple to implement
 Less computationally expensive
-Usually works best when there 
+Usually works best when there
 
 Run different models and compare results, choose the model with the highest accuracy to diagnose hearing issues
 
