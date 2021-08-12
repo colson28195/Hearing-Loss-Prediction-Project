@@ -20,7 +20,7 @@ Machine learning is a powerful tool in analysing patterns, learning and making p
 
 
 ## Deliverables
-The deliverables for the project include:
+With the aims considered, the deliverables include:
 1. A machine learning tool that can use WBT data to diagnose ears as normal or with conductive conditions. The key features of the tools will be
 - Highly interactive user inferface which allows selection of a ML methods from a curated set of algorithms to evaluate the ear data
 - Better visualization of the output metrics for improveed interpretability
@@ -28,9 +28,9 @@ The deliverables for the project include:
 
 ![mock_tool_ui](https://raw.githubusercontent.com/danielchegwidden/tytonidae-tympanometry/dev-ar/anitha/images/tyty_web_app_ui.JPG?token=AT422D7YNYJPINUD7YFL2M3BDWW2I)
 
-2. Code repository hosted on Github, which can be utilised for future development purposes
+2. A code repository hosted on Github, which can be utilised for future development purposes
 
-3. Final Report that summaries the data characteristics and methods used in the tool
+3. A report that summaries the data characteristics and methods used in the tool
 
 ### Project timeline for the client
 - GANTT chart for the client includes progress of the project, client meetings and milestones.
