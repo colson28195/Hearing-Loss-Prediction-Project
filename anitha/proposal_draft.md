@@ -1,4 +1,4 @@
-## Background
+## Background 
 Understanding the data 
 - where was data collected (university audiology laboratory, Brisbane) 
 - how many ears studied (with & without OME)
@@ -27,12 +27,16 @@ Have a clear value proposition (efficiency, consistency/reproduciblity, cost-sav
 - can this tool be repurposed for other data like WBA?
 - risk assessment (low risk and high reward)
 
-## Deliverables
-Expected outcomes of the project
-- comparision of various classification algorithms based on metrics
+## Deliverables 
+1. A machine learning tool that can use WBA data to diagnose ears as normal or with conductive conditions. The key features of the tools will be
+- Highly interactive user inferface which allows selection of a ML methods from a curated set of algorithms to evaluate the ear data 
+- Better visualization of the output metrics for improveed interpretability 
+- Comparing the result of differet ML methods and choosing the ideal method to diagnose the ear
 
-Data analytics & visualisation outputs in presentation, reports and codes
-- a software tool?
+2. Code repository hosted on Github, which can be utilised for future development purpose
+3. Final Report that summaries the data characteristics and methods used in the tool
+
+
 
 ## Methods
 Preliminary interrogation of the data
@@ -45,7 +49,7 @@ Choice of different data exploration and analytical techniques
 
 How to make the process understandable and the output usable (e.g. parameter control, incorporating domain knowledge, communicating output uncertainty)
 - feature selection
-- loss functions
+- metrics
 
 Visualisation to communicate the processes/results
 
