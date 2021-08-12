@@ -19,22 +19,24 @@ Machine learning is a powerful tool in analysing patterns, learning and making p
 
 
 ## Deliverables
-1. A machine learning tool that can use WBA data to diagnose ears as normal or with conductive conditions. The key features of the tools will be
-- Highly interactive user inferface which allows selection of a ML methods from a curated set of algorithms to evaluate the ear data 
-- Better visualization of the output metrics for improveed interpretability 
+The deliverables for the project include:
+1. A machine learning tool that can use WBT data to diagnose ears as normal or with conductive conditions. The key features of the tools will be
+- Highly interactive user inferface which allows selection of a ML methods from a curated set of algorithms to evaluate the ear data
+- Better visualization of the output metrics for improveed interpretability
 - Comparing the result of differet ML methods and choosing the ideal method to diagnose the ear
 
 ![mock_tool_ui](https://raw.githubusercontent.com/danielchegwidden/tytonidae-tympanometry/dev-ar/anitha/images/tyty_web_app_ui.JPG?token=AT422D7YNYJPINUD7YFL2M3BDWW2I)
 
 2. Code repository hosted on Github, which can be utilised for future development purposes
+
 3. Final Report that summaries the data characteristics and methods used in the tool
 
+### Project timeline for the client
+- GANTT chart for the client includes progress of the project, client meetings and milestones.
+(attached as seperate file - Gantt_Charts.xlsx)
 
 ## Methods
-Assumptions that we are making.
-What sort of preprocessing we are doing and why.
-
-Few of the Machine Learning algorithms that will be used in to analyse and predict outcomes mentioned below -
+There is a number of machine learning algorithms can be used to analyse WBT data and comparisons will be made among these methods and against the ROC:
 
 1. Support Vector Machines - SVM is a supervised learning model which performs classification by creating an augmented line to classify data. The aim is to map training data in such a way that the augmented line separating the different calsses is as wide as possible so that new data can be predicted by detecing which side of the line they would fall in. SVM is robust and has a range of functions to choose from and more often than not provides results with a higher accuracy however this comes at the cost of it being compuationally expensive.
 
@@ -45,15 +47,13 @@ Few of the Machine Learning algorithms that will be used in to analyse and predi
 4. Logistic Regression - Logisitic regression is a statistical model that can compute the odds of a record lying in a class after the model has been trained. If the odds of the record corresponding to a class is high, it will assign it to that particular class and if the odds are low, it shall assign that record to the other class. This model is simple to implement but lack accuracy and hence provides relatively bad predictions.
 
 
-Once we have run the above models, we shall analyse and compare results of them all to the ROC curve and provide insights as to which model is the optimum model to diagnose ear condidtions.
+After all models are trained, comparisons will be made to evaluate each model's performance, using accuracy rate, specificity and sensitivity. The models will also be compared against the ROC curve to provide insights as to which model is the optimum model to diagnose ear condidtions.
 
 
 ## Project Management Timeline
 - GANTT chart needed for the team includes progress of the project, team meetings and task and deadlines.
-(attached as seperate file - Team_Gantt_Chart.xlsx)
+(attached as seperate file - Gantt_Charts.xlsx)
 
-- GANTT chart for the client includes progress of the project, client meetings and milestones.
-(attached as seperate file - Client_Gantt_Chart.xlsx)
 
 
 ## Appendix
