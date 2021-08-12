@@ -11,6 +11,7 @@ This proposal addresses the limitation of current method used on WBT and propose
 
 ## Value proposition
 Machine learning is a powerful tool in analysing patterns, learning and making predictions. With a well-trained machine learning algorithm, it can improve the analysis of WBT data and better detect ears with conductive conditions. Here are the key benefits:
+
 1. Improve the accuracy in detecting ears with conductive conditions. The highest accuracy rate from the current method, receiver characteristics analysis, is only 74%. Machine learning classifiers will be trained and compared to find the most accurate one.
 
 2. ncrease reproducibility of the machine learning algorithm and interpretability of the results. Once the machine learning classifier is trained, future data can be fed in easily and results will be produced instantly.  This will save time and human capital in clinics as well as help to transform raw data to meaningful insights about patients’ ear condition.
@@ -19,15 +20,20 @@ Machine learning is a powerful tool in analysing patterns, learning and making p
 
 
 ## Deliverables
-1. A machine learning tool that can use WBA data to diagnose ears as normal or with conductive conditions. The key features of the tools will be
-- Highly interactive user inferface which allows selection of a ML methods from a curated set of algorithms to evaluate the ear data 
-- Better visualization of the output metrics for improveed interpretability 
-- Comparing the result of differet ML methods and choosing the ideal method to diagnose the ear
+
+The aim of the project considered, our deliverables can be listed into 3 broad categories - 
+
+1. A machine learning tool that utilizes the WBT dataset to diagnose ears as either normal or with conductive conditions. The key features that the tool shall include -
+
+- A highly interactive user inferface which allows selection from a list of ML methods from a curated set of algorithms to evaluate the data 
+- Better visualization of the output metrics for improved interpretability 
+- Comparing the results of different ML methods and choosing the ideal method to diagnose ear conditions
 
 ![mock_tool_ui](https://raw.githubusercontent.com/danielchegwidden/tytonidae-tympanometry/dev-ar/anitha/images/tyty_web_app_ui.JPG?token=AT422D7YNYJPINUD7YFL2M3BDWW2I)
 
-2. Code repository hosted on Github, which can be utilised for future development purposes
-3. Final Report that summaries the data characteristics and methods used in the tool
+2. A code repository hosted on Github, which can be utilised for future development purposes
+
+3. A Report that summarises the data characteristics and methods used in the tool.
 
 
 ## Methods
