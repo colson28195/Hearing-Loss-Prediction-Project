@@ -33,7 +33,9 @@ Have a clear value proposition (efficiency, consistency/reproduciblity, cost-sav
 - Better visualization of the output metrics for improveed interpretability 
 - Comparing the result of differet ML methods and choosing the ideal method to diagnose the ear
 
-2. Code repository hosted on Github, which can be utilised for future development purpose
+![mock_tool_ui](https://raw.githubusercontent.com/danielchegwidden/tytonidae-tympanometry/dev-ar/anitha/images/tyty_web_app_ui.JPG?token=AT422D7YNYJPINUD7YFL2M3BDWW2I)
+
+2. Code repository hosted on Github, which can be utilised for future development purposes
 3. Final Report that summaries the data characteristics and methods used in the tool
 
 
