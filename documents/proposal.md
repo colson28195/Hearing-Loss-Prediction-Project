@@ -14,7 +14,7 @@ Machine learning is a powerful tool in analysing patterns, learning and making p
 
 1. Improve the accuracy in detecting ears with conductive conditions. The highest accuracy rate from the current method, receiver characteristics analysis, is only 74%. Machine learning classifiers will be trained and compared to find the most accurate one.
 
-2. ncrease reproducibility of the machine learning algorithm and interpretability of the results. Once the machine learning classifier is trained, future data can be fed in easily and results will be produced instantly.  This will save time and human capital in clinics as well as help to transform raw data to meaningful insights about patients’ ear condition.
+2. Increase reproducibility of the machine learning algorithm and interpretability of the results. Once the machine learning classifier is trained, future data can be fed in easily and results will be produced instantly.  This will save time and human capital in clinics as well as help to transform raw data to meaningful insights about patients’ ear condition.
 
 3. Machine learning tools will be able to help clinic practitioners interpret patients test results quickly and more accurately, which improves efficiency and reduces cost. In addition, machine learning tools can be applied to other data easily, such as WBA data.
 
@@ -52,7 +52,7 @@ After all models are trained, comparisons will be made to evaluate each model's 
 
 
 ## Project Management Timeline
-- GANTT chart needed for the team includes progress of the project, team meetings and task and deadlines.
+GANTT chart needed for the team includes progress of the project, team meetings and task and deadlines.
 (attached as seperate file - Gantt_Charts.xlsx)
 
 
