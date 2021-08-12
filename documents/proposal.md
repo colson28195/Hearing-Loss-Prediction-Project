@@ -30,7 +30,7 @@ Machine learning is a powerful tool in analysing patterns, learning and making p
 3. Final Report that summaries the data characteristics and methods used in the tool
 
 
-## METHODS
+## Methods
 Assumptions that we are making.
 What sort of preprocessing we are doing and why.
 
@@ -49,10 +49,10 @@ Once we have run the above models, we shall analyse and compare results of them 
 
 
 ## Project Management Timeline
-- GANTT chart needed for the team – need to decide whether we will use Excel or other automated GANTT chart platform
+- GANTT chart needed for the team includes progress of the project, team meetings and task and deadlines.
 (attached as seperate file - Team_Gantt_Chart.xlsx)
 
-- The GANTT organises the progress of the project, including team meetings, client meetings, tasks and deadlines.
+- GANTT chart for the client includes progress of the project, client meetings and milestones.
 (attached as seperate file - Client_Gantt_Chart.xlsx)
 
 
