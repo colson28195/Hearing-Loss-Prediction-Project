@@ -11,6 +11,7 @@ This proposal addresses the limitation of current method used on WBT and propose
 
 ## Value proposition
 Machine learning is a powerful tool in analysing patterns, learning and making predictions. With a well-trained machine learning algorithm, it can improve the analysis of WBT data and better detect ears with conductive conditions. Here are the key benefits:
+
 1. Improve the accuracy in detecting ears with conductive conditions. The highest accuracy rate from the current method, receiver characteristics analysis, is only 74%. Machine learning classifiers will be trained and compared to find the most accurate one.
 
 2. ncrease reproducibility of the machine learning algorithm and interpretability of the results. Once the machine learning classifier is trained, future data can be fed in easily and results will be produced instantly.  This will save time and human capital in clinics as well as help to transform raw data to meaningful insights about patients’ ear condition.
