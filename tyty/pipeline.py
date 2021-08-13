@@ -30,7 +30,7 @@ def prep_pipeline(data, feature_columns=[], pressure_match=False):
     - Daniel
     """
     if pressure_match:
-        data = processing.match_pressures(data)
+        data = preparation.match_pressures(data)
 
     features, target = preparation.split_target(data, feature_columns)
 
