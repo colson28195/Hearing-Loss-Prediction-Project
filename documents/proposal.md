@@ -21,16 +21,18 @@ Machine learning is a powerful tool in analysing patterns, learning and making p
 
 ## Deliverables
 With the aims considered, the deliverables include:
-1. A machine learning tool that can use WBT data to diagnose ears as normal or with conductive conditions. The key features of the tools will be
-- Highly interactive user inferface which allows selection of a ML methods from a curated set of algorithms to evaluate the ear data
+
+1. A machine learning tool that can use the WBT data to classify ears as either 'normal' or with 'conductive conditions'. The key features of the tools shall include -
+
+- A highly interactive user inferface which allows selection from a list of ML methods from a curated set of algorithms to evaluate the data
 - Better visualization of the output metrics for improveed interpretability
-- Comparing the result of differet ML methods and choosing the ideal method to diagnose the ear
+- Comparison of results from the differet ML methods and choosing the ideal method to diagnose ear related issues
 
 ![mock_tool_ui](https://raw.githubusercontent.com/danielchegwidden/tytonidae-tympanometry/dev-ar/anitha/images/tyty_web_app_ui.JPG?token=AT422D7YNYJPINUD7YFL2M3BDWW2I)
 
 2. A code repository hosted on Github, which can be utilised for future development purposes
 
-3. A report that summaries the data characteristics and methods used in the tool
+3. A report that summarises the data characteristics and methods used in the tool
 
 ### Project timeline for the client
 - GANTT chart for the client includes progress of the project, client meetings and milestones.
@@ -47,8 +49,10 @@ There is a number of machine learning algorithms can be used to analyse WBT data
 
 4. Logistic Regression - Logisitic regression is a statistical model that can compute the odds of a record lying in a class after the model has been trained. If the odds of the record corresponding to a class is high, it will assign it to that particular class and if the odds are low, it shall assign that record to the other class. This model is simple to implement but lack accuracy and hence provides relatively bad predictions.
 
+5. K - Nearest Neighbours
 
-After all models are trained, comparisons will be made to evaluate each model's performance, using accuracy rate, specificity and sensitivity. The models will also be compared against the ROC curve to provide insights as to which model is the optimum model to diagnose ear condidtions.
+
+After all models are trained, comparisons will be made to evaluate each model's performance, using accuracy rate, specificity and sensitivity. The models will also be compared against the ROC curve to provide insights as to which model is optimum to diagnose ear condidtions.
 
 
 ## Project Management Timeline
