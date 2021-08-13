@@ -1,6 +1,6 @@
-## Background 
-Understanding the data 
-- where was data collected (university audiology laboratory, Brisbane) 
+## Background
+Understanding the data
+- where was data collected (university audiology laboratory, Brisbane)
 - how many ears studied (with & without OME)
 - tests performed : PTA (226Hz), WBT (226Hz to 8000Hz) / Pressure
 - feature columns including gender (male & female), age range, ethinicity
@@ -27,10 +27,10 @@ Have a clear value proposition (efficiency, consistency/reproduciblity, cost-sav
 - can this tool be repurposed for other data like WBA?
 - risk assessment (low risk and high reward)
 
-## Deliverables 
+## Deliverables
 1. A machine learning tool that can use WBA data to diagnose ears as normal or with conductive conditions. The key features of the tools will be
-- Highly interactive user inferface which allows selection of a ML methods from a curated set of algorithms to evaluate the ear data 
-- Better visualization of the output metrics for improveed interpretability 
+- Highly interactive user inferface which allows selection of a ML methods from a curated set of algorithms to evaluate the ear data
+- Better visualization of the output metrics for improveed interpretability
 - Comparing the result of differet ML methods and choosing the ideal method to diagnose the ear
 
 ![mock_tool_ui](https://raw.githubusercontent.com/danielchegwidden/tytonidae-tympanometry/dev-ar/anitha/images/tyty_web_app_ui.JPG?token=AT422D7YNYJPINUD7YFL2M3BDWW2I)
