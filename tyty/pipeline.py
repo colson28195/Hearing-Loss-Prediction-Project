@@ -1,7 +1,7 @@
-from tyty import processing
+from tyty import processing, preparation
 
 
-def run_pipeline():
+def processing_pipeline():
     """
     Runs the processing pipeline
 
@@ -22,38 +22,16 @@ def run_pipeline():
     return combined
 
 
-def split_target(data, feature_columns=[]):
+def prep_pipeline(data, feature_columns=[], pressure_match=False):
     """
-    Splits the target and the relevant features out
+    Runs the preparation pipeline
 
     Contributors:
     - Daniel
     """
-    target = data["OverallPoF"]
-    features = data[[col for col in data.columns if "f(" in col] + feature_columns]
+    if pressure_match:
+        data = processing.match_pressures(data)
+
+    features, target = preparation.split_target(data, feature_columns)
+
     return features, target
-
-
-def match_pressures(data):
-    """
-    Extract the rows where the Pressure matches the AdultAbsorbanceData as closely as possible
-
-    Contributors:
-    - Tom
-    - Daniel
-    """
-    cols = [
-        col
-        for col in data.columns
-        if col not in ["Subject", "AdultAbsorbanceData", "Pressure", "EarSide"]
-    ]
-    smaller = data.drop(columns=cols)
-    smaller["abs"] = abs(smaller["AdultAbsorbanceData"] - smaller["Pressure"])
-    grouped = (
-        smaller.loc[smaller.groupby(["Subject", "EarSide"])["abs"].idxmin()]
-        .reset_index(drop=True)
-        .drop(columns="abs")
-    )
-    return grouped.merge(
-        data, on=["Subject", "EarSide", "AdultAbsorbanceData", "Pressure"], how="inner"
-    )

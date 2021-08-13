@@ -1,4 +1,5 @@
 import pandas as pd
+from tyty import processing, preparation
 
 
 def import_data(dataset):
@@ -35,20 +36,20 @@ def combine_data(data, demo):
     return demo.merge(data, on=["Subject", "EarSide"], how="inner")
 
 
-def run_pipeline():
+def processing_pipeline():
     """
     Runs the processing pipeline
     """
-    data = import_data("data")
-    demo = import_data("demographics")
+    data = processing.import_data("data")
+    demo = processing.import_data("demographics")
 
-    clean_empty(data)
-    clean_empty(demo)
+    processing.clean_empty(data)
+    processing.clean_empty(demo)
 
-    remove_columns(demo)
-    remove_columns(data, ["Gender"])
+    processing.remove_columns(demo)
+    processing.remove_columns(data, ["Gender"])
 
-    combined = combine_data(data, demo)
+    combined = processing.combine_data(data, demo)
 
     return combined
 
@@ -81,3 +82,15 @@ def match_pressures(data):
     return grouped.merge(
         data, on=["Subject", "EarSide", "AdultAbsorbanceData", "Pressure"], how="inner"
     )
+
+
+def prep_pipeline(data, feature_columns=[], pressure_match=False):
+    """
+    Runs the preparation pipeline
+    """
+    if pressure_match:
+        data = processing.match_pressures(data)
+
+    features, target = preparation.split_target(data, feature_columns)
+
+    return features, target
