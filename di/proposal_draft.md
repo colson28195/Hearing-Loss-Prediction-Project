@@ -18,33 +18,6 @@ Machine learning is a powerful tool in analysing patterns, learning and making p
 3. Machine learning tools will be able to help clinic practitioners interpret patients test results quickly and more accurately, which improves efficiency and reduces cost. In addition, machine learning tools can be applied to other data easily, such as WBA data.
 
 
-## Deliverables & Timeline
-An automated machine learning tool that can use WBA data to diagnose ears as normal or with conductive conditions.
-- Features and advantages about the ML tool
-
-## Methods
-Using machine learning methods to improve classification accuracy and output.
-Various algorithms will be used, such as:
-- Decision Tree
-
-- Random Forest
-
-
-- Logistic Regression
-
-
-- Support Vector Machine
-
-
-Run different models and compare results, choose the model with the highest accuracy to diagnose ears.
-
-
-## Project Management Timeline & Costs
-- GANTT chart needed for the team – need to decide whether we will use Excel or other automated GANTT chart platform
-
-- The GANTT organises the progress of the project, including team meetings, client meetings, tasks and deadlines.
-
-- Costs – estimation of manpower and salaries to maintain and update the ML tool.
-
-## Appendix
-To be completed by individuals.
+## Project Management Timeline
+The team Gahtt chart outlines the timeline for the project within the team.
+(Gahtt chart is in Excel file - Team Gahtt Chart )
