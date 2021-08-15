@@ -50,6 +50,8 @@ All of these models will be compared across a range of metrics, and with the exi
 
 2. Matching Pressures - only the records where the pressure recorded matches the tympanometric peak pressure which is recorded as the Adult Absorbance feature in the data.
 
+Additional models such as K-Means Clustering or Neural Networks may be explored given the time constraints and the performance of the above four models in order to deliver the best results.
+
 ## Management & Timeline
 See Appendix B for Gantt Chart.
 
@@ -66,7 +68,7 @@ I raise Issues on GitHub for tasks that need to be completed to allow the other 
 
 My plan for this team is to develop their software engineering skills through the use of Git, and their Python development skills through building the tool. I am also a believer in collaborative development, so I split up the team in two to work on Phase 1 which is this proposal document and the data processing step. For Phase 2 and 3, these teams will switch so people get the chance to work with different people.
 
-I am interested in deployment, and I am guiding the team towards writing high-quality code that we can easily translated into a working machine learning tool that the client can utilise as a clinician.
+I am interested in deployment, and I am guiding the team towards writing high-quality, reproduceable code, to be translated into a working machine learning tool that the client can utilise as a clinician.
 
 ### Appendix B
 Gantt Chart
