@@ -20,7 +20,7 @@ def match_pressures(data):
     )
     return grouped.merge(
         data, on=["Subject", "EarSide", "AdultAbsorbanceData", "Pressure"], how="inner"
-    )
+    ).reset_index(drop=True)
 
 
 def split_target(data, feature_columns=[]):
