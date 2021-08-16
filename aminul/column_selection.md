@@ -10,6 +10,7 @@ result = pipeline.run_pipeline()
 
 features, target = pipeline.split_target(result, ["Gender", "EarSide","Age"])
 
+
 ```
 # Data type Explanation:
 
