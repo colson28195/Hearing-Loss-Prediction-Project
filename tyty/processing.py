@@ -44,4 +44,6 @@ def combine_data(data, demo):
     demo["EarSide"] = ([0] * 120) + ([1] * 119)
     data["EarSide"] = data["EarSide"].map({"Left": 0, "Right": 1})
     data.rename(columns={"Participant ID": "Subject"}, inplace=True)
-    return demo.merge(data, on=["Subject", "EarSide"], how="inner")
+    return demo.merge(data, on=["Subject", "EarSide"], how="inner").reset_index(
+        drop=True
+    )
