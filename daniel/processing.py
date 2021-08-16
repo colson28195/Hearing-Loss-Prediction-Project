@@ -1,4 +1,5 @@
 import pandas as pd
+from sklearn.model_selection import train_test_split
 from tyty import processing, preparation
 
 
@@ -33,7 +34,9 @@ def combine_data(data, demo):
     demo["EarSide"] = ([0] * 120) + ([1] * 119)
     data["EarSide"] = data["EarSide"].map({"Left": 0, "Right": 1})
     data.rename(columns={"Participant ID": "Subject"}, inplace=True)
-    return demo.merge(data, on=["Subject", "EarSide"], how="inner")
+    return demo.merge(data, on=["Subject", "EarSide"], how="inner").reset_index(
+        drop=True
+    )
 
 
 def processing_pipeline():
@@ -81,16 +84,34 @@ def match_pressures(data):
     )
     return grouped.merge(
         data, on=["Subject", "EarSide", "AdultAbsorbanceData", "Pressure"], how="inner"
-    )
+    ).reset_index(drop=True)
 
 
-def prep_pipeline(data, feature_columns=[], pressure_match=False):
+def prep_pipeline(data, feature_columns=[], pressure_match=False, test_size=0.2):
     """
     Runs the preparation pipeline
     """
     if pressure_match:
-        data = processing.match_pressures(data)
+        data = preparation.match_pressures(data)
 
     features, target = preparation.split_target(data, feature_columns)
 
-    return features, target
+    train_data, test_data, train_labels, test_labels = train_test_split(
+        features, target, test_size=test_size, random_state=24
+    )
+
+    return train_data, test_data, train_labels, test_labels
+
+
+def full_pipeline(feature_columns=[], pressure_match=False, test_size=0.2):
+    """
+    Runs the processing and preparation pipelines to return data ready for modelling
+    """
+    result = processing_pipeline()
+    train_data, test_data, train_labels, test_labels = prep_pipeline(
+        result,
+        feature_columns=feature_columns,
+        pressure_match=pressure_match,
+        test_size=test_size,
+    )
+    return train_data, test_data, train_labels, test_labels

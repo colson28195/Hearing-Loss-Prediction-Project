@@ -1,13 +1,21 @@
 import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+import beluga
 
 from tyty import pipeline
-
-# import daniel.processing as ps
+import daniel
 
 pd.set_option("display.max_rows", None)
 
-result = pipeline.processing_pipeline()
+train_data, test_data, train_labels, test_labels = pipeline.full_pipeline(
+    feature_columns=["Gender", "EarSide", "Age"]
+)
 
-features, target = pipeline.prep_pipeline(result, ["Gender", "EarSide"])
+model = DecisionTreeClassifier(random_state=24)
 
-print(features.head())
+train_pred, test_pred = pipeline.modelling_pipeline(
+    model, train_data, train_labels, test_data
+)
+
+beluga.metrics.summary(train_labels, train_pred, conditions=True)
+beluga.metrics.summary(test_labels, test_pred, conditions=True)
