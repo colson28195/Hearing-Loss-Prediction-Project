@@ -4,7 +4,7 @@ from tyty import pipeline
 
 result = pipeline.run_pipeline()
 
-features, target = pipeline.split_target(result, ["Gender", "EarSide"])
+features, target = pipeline.split_target(result, ["Gender", "EarSide", "Age"])
 
 # print(features)
 # Data typedescription:
