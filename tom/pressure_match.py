@@ -1,17 +1,3 @@
-import pandas as pd
-
-import daniel.processing as ps
-
-pd.set_option("display.max_rows", None)
-
-result = ps.run_pipeline()
-
-features, target = ps.split_target(result, ["Gender", "EarSide"])
-
-# print(features.head())
-# print(len(result))
-
-
 def match_pressures(data):
     """
     Extract the rows where the Pressure matches the AdultAbsorbanceData as closely as possible
@@ -31,6 +17,3 @@ def match_pressures(data):
     return grouped.merge(
         data, on=["Subject", "EarSide", "AdultAbsorbanceData", "Pressure"], how="inner"
     ).reset_index(drop=True)
-
-
-# match_pressures(result)

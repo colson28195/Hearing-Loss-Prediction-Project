@@ -1,0 +1,7 @@
+Individual reflection
+
+With data processing experience and machine learning skills, I am able to contribute to most parts of the project, under teamwork and collaboration with my group mates. I have done my part of data processing, which consists of two parts: 1. pressure matching, which is to find the exact pressure that gives the peak compliance in the tympanometry result, and then group them for further exploration; 2. manually check data merging: since parts of the two datasets are missing, when doing the inner join of datasets, there could be data loss. Thus I manually checked both datasets and made notes of data missing. Also as a data science student, I have no prior knowledge of tympanometry, so I did research to make sure I understanding the client requirements as well as how to proceed with my technical skills.
+
+Our group chooses GitHub as the collaboration tool, and our team leader has created a Git repository for us to work collaboratively. Clarity is important. I am goal-oriented and so I follow the team agendas and guidance, deal with the tasks assigned and make sure delivering my work on time to make thing goes smoothly.
+
+I am always keen to learn, and I believe the more effort I put in, the more I can gain from doing this project. With weekly meetings as a group and client meetings, I can also develop communication skills and time managing skills, which are vital during the collaboration work.
