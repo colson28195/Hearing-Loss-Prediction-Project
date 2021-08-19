@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import classification_report
 import beluga
 
 from tyty import pipeline
@@ -19,3 +20,4 @@ train_pred, test_pred = pipeline.modelling_pipeline(
 
 beluga.metrics.summary(train_labels, train_pred, conditions=True)
 beluga.metrics.summary(test_labels, test_pred, conditions=True)
+print(classification_report(test_labels, test_pred))
