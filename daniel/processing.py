@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 from tyty import processing, preparation
 
@@ -94,16 +95,18 @@ def prep_pipeline(data, feature_columns=[], pressure_match=False, test_size=0.2)
     if pressure_match:
         data = preparation.match_pressures(data)
 
-    features, target = preparation.split_target(data, feature_columns)
-
-    train_data, test_data, train_labels, test_labels = train_test_split(
-        features, target, test_size=test_size, random_state=24
+    train, test = preparation.subject_train_test_split(data, test_size)
+    train_data, train_labels = preparation.split_target(
+        train, feature_columns=["Gender", "EarSide", "Age"]
+    )
+    test_data, test_labels = preparation.split_target(
+        test, feature_columns=["Gender", "EarSide", "Age"]
     )
 
     return train_data, test_data, train_labels, test_labels
 
 
-def full_pipeline(feature_columns=[], pressure_match=False, test_size=0.2):
+def full_pipeline(feature_columns=[], pressure_match=False, test_percent=20):
     """
     Runs the processing and preparation pipelines to return data ready for modelling
     """
@@ -112,6 +115,18 @@ def full_pipeline(feature_columns=[], pressure_match=False, test_size=0.2):
         result,
         feature_columns=feature_columns,
         pressure_match=pressure_match,
-        test_size=test_size,
+        test_percent=test_percent,
     )
     return train_data, test_data, train_labels, test_labels
+
+
+def subject_train_test_split(data, test_percent=20):
+    """
+    Splits the data so each subject is in either the train or the test set but not both
+    """
+    num_subs = np.unique(data["Subject"])
+    train_num = len(num_subs) * test_percent // 100
+    train_subs = np.random.choice(num_subs, train_num)
+    train_data = data[~data["Subject"].isin(train_subs)]
+    test_data = data[data["Subject"].isin(train_subs)]
+    return train_data, test_data
