@@ -1,0 +1,5 @@
+In the past weeks, I’ve enjoyed working with my teammates collaborating through both virtual and face-to-face meetings for discussion and Github for code integration. It is exciting to work on this Capstone Project as it has given an opportunity to not just utilise my technical skills but also enhance soft skills like teamwork and effective communication. 
+
+In Phase 1 of this project, I was assigned to Team A along with Di and Karan by our team leader Daniel. Knowledge acquired through Agile Web Development unit has enabled me to contribute to the Deliverables and Gantt Chart part of the proposal document. In the following Phases I seek to work on data modelling part to train WBT data. I have completed Machine Learning unit in previous semester, and I believe it will help me with this part of the project to generate models and perform fine tuning to optimise performance. 
+
+It’s been a pleasure working with very co-operative and highly knowledgeable teammates, guided by our amazing supervisor Robyn. Looking forward to working on the next phase.
