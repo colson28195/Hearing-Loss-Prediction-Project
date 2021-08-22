@@ -1,4 +1,7 @@
 from sklearn.model_selection import train_test_split
+import sklearn
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
 from tyty import processing, preparation, modelling
 
 
@@ -59,6 +62,22 @@ def full_pipeline(feature_columns=[], pressure_match=False, test_percent=20):
         test_percent=test_percent,
     )
     return train_data, test_data, train_labels, test_labels
+
+
+def scaling_pipeline(train_data, test_data, scaling_method=""):
+    if scaling_method == "min_max":
+        min_max_scaler = MinMaxScaler()
+        train_transformed = min_max_scaler.fit_transform(train_data)
+        test_transformed = min_max_scaler.transform(test_data)
+        return train_transformed, test_transformed
+
+    if scaling_method == "standard_scaler":
+        std_scaler = StandardScaler()
+        train_transformed = std_scaler.fit_transform(train_data)
+        test_transformed = std_scaler.transform(test_data)
+        return train_transformed, test_transformed
+    else:
+        return None
 
 
 def modelling_pipeline(model, train_data, train_labels, test_data):
