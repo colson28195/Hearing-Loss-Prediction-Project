@@ -23,7 +23,9 @@ def processing_pipeline():
     return combined
 
 
-def prep_pipeline(data, feature_columns=[], pressure_match=False, test_percent=20):
+def prep_pipeline(
+    data, feature_columns=[], pressure_match=False, test_percent=20, scaling=""
+):
     """
     Runs the preparation pipeline
 
@@ -41,10 +43,30 @@ def prep_pipeline(data, feature_columns=[], pressure_match=False, test_percent=2
         test, feature_columns=feature_columns
     )
 
-    return train_data, test_data, train_labels, test_labels
+    if scaling == "min_max":
+        train_transformed, test_transformed = preparation.min_max_scaling(
+            train_data, test_data
+        )
+    elif scaling == "std_scale":
+        train_transformed, test_transformed = preparation.standard_scaling(
+            train_data, test_data
+        )
+    elif scaling == "None":
+        train_transformed, test_transformed = train_data, test_data
+
+    return (
+        train_data,
+        test_data,
+        train_labels,
+        test_labels,
+        train_transformed,
+        test_transformed,
+    )
 
 
-def full_pipeline(feature_columns=[], pressure_match=False, test_percent=20):
+def full_pipeline(
+    feature_columns=[], pressure_match=False, test_percent=20, scaling=""
+):
     """
     Runs the processing and preparation pipelines to return data ready for modelling
 
@@ -52,13 +74,28 @@ def full_pipeline(feature_columns=[], pressure_match=False, test_percent=20):
     - Daniel
     """
     result = processing_pipeline()
-    train_data, test_data, train_labels, test_labels = prep_pipeline(
+    (
+        train_data,
+        test_data,
+        train_labels,
+        test_labels,
+        train_transformed,
+        test_transformed,
+    ) = prep_pipeline(
         result,
         feature_columns=feature_columns,
         pressure_match=pressure_match,
         test_percent=test_percent,
+        scaling=scaling,
     )
-    return train_data, test_data, train_labels, test_labels
+    return (
+        train_data,
+        test_data,
+        train_labels,
+        test_labels,
+        train_transformed,
+        test_transformed,
+    )
 
 
 def modelling_pipeline(model, train_data, train_labels, test_data):
