@@ -1,4 +1,7 @@
 import numpy as np
+import sklearn
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
 
 np.random.seed(24)
 
@@ -53,3 +56,33 @@ def split_target(data, feature_columns=[]):
     target = data["OverallPoF"]
     features = data[[col for col in data.columns if "f(" in col] + feature_columns]
     return features, target
+
+
+def standard_scaling(train_data, test_data):
+    """
+    Scale train and test data using standard scaling
+
+    Contributors:
+    - Karan
+    - Anitha
+    - Di
+    """
+    std_scaler = StandardScaler()
+    train_transformed = std_scaler.fit_transform(train_data)
+    test_transformed = std_scaler.transform(test_data)
+    return train_transformed, test_transformed
+
+
+def min_max_scaling(train_data, test_data):
+    """
+    Scale train and test data using MinMax scaling
+
+    Contributors:
+    - Karan
+    - Anitha
+    - Di
+    """
+    min_max_scaler = MinMaxScaler()
+    train_transformed = min_max_scaler.fit_transform(train_data)
+    test_transformed = min_max_scaler.transform(test_data)
+    return train_transformed, test_transformed
