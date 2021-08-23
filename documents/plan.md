@@ -18,7 +18,7 @@
 ### Milestones
 - 23-August: Select model and run end-to-end
 - 30-August: Initial hyperparameter tuning
-- 6-September: Comprehensive Hyperparameter tuning
+- 6-September: Comprehensive Hyperparameter tuning (Virtual)
 - 13-September: Present models and choose best performance
 - 20-September:
 
