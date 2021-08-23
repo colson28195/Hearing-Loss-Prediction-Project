@@ -9,8 +9,6 @@ import daniel
 pd.set_option("display.max_rows", None)
 np.random.seed(24)
 
-data = pipeline.processing_pipeline()
-
 train_data, test_data, train_labels, test_labels = pipeline.full_pipeline(
     feature_columns=["Gender", "EarSide", "Age"]
 )
