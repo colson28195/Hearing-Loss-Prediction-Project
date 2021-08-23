@@ -24,13 +24,14 @@ def processing_pipeline():
 
 
 def prep_pipeline(
-    data, feature_columns=[], pressure_match=False, test_percent=20, scaling=""
+    data, feature_columns=[], pressure_match=False, test_percent=20, scaling=None
 ):
     """
     Runs the preparation pipeline
 
     Contributors:
     - Daniel
+    - Di
     """
     if pressure_match:
         data = preparation.match_pressures(data)
@@ -44,24 +45,11 @@ def prep_pipeline(
     )
 
     if scaling == "min_max":
-        train_transformed, test_transformed = preparation.min_max_scaling(
-            train_data, test_data
-        )
+        train_data, test_data = preparation.min_max_scaling(train_data, test_data)
     elif scaling == "std_scale":
-        train_transformed, test_transformed = preparation.standard_scaling(
-            train_data, test_data
-        )
-    elif scaling == "None":
-        train_transformed, test_transformed = train_data, test_data
+        train_data, test_data = preparation.standard_scaling(train_data, test_data)
 
-    return (
-        train_data,
-        test_data,
-        train_labels,
-        test_labels,
-        train_transformed,
-        test_transformed,
-    )
+    return (train_data, test_data, train_labels, test_labels)
 
 
 def full_pipeline(
@@ -72,35 +60,25 @@ def full_pipeline(
 
     Contributors:
     - Daniel
+    - Di
     """
     result = processing_pipeline()
-    (
-        train_data,
-        test_data,
-        train_labels,
-        test_labels,
-        train_transformed,
-        test_transformed,
-    ) = prep_pipeline(
+    (train_data, test_data, train_labels, test_labels) = prep_pipeline(
         result,
         feature_columns=feature_columns,
         pressure_match=pressure_match,
         test_percent=test_percent,
         scaling=scaling,
     )
-    return (
-        train_data,
-        test_data,
-        train_labels,
-        test_labels,
-        train_transformed,
-        test_transformed,
-    )
+    return (train_data, test_data, train_labels, test_labels)
 
 
 def modelling_pipeline(model, train_data, train_labels, test_data):
     """
     Trains the model and performs prediction on the unseen test set
+
+    Contributors:
+    - Daniel
     """
     trained_model = modelling.training(model, train_data, train_labels)
     train_predictions = modelling.predicting(trained_model, train_data)
