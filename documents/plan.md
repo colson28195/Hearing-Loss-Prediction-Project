@@ -16,7 +16,11 @@
 ## Phase 2: Weeks 2-8
 
 ### Milestones
-- Explore models
+- 23-August: Select model and run end-to-end
+- 30-August: Initial hyperparameter tuning
+- 6-September: Comprehensive Hyperparameter tuning
+- 13-September: Present models and choose best performance
+- 20-September:
 
 ## Phase 3: Weeks 9-12
 

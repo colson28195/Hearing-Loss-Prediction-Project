@@ -53,7 +53,7 @@ def prep_pipeline(
 
 
 def full_pipeline(
-    feature_columns=[], pressure_match=False, test_percent=20, scaling=""
+    feature_columns=[], pressure_match=False, test_percent=20, scaling=None
 ):
     """
     Runs the processing and preparation pipelines to return data ready for modelling
