@@ -24,7 +24,12 @@ def processing_pipeline():
 
 
 def prep_pipeline(
-    data, feature_columns=[], pressure_match=False, test_percent=20, scaling=None
+    data,
+    feature_columns=[],
+    all_freq=True,
+    pressure_match=False,
+    test_percent=20,
+    scaling=None,
 ):
     """
     Runs the preparation pipeline
@@ -38,10 +43,10 @@ def prep_pipeline(
 
     train, test = preparation.subject_train_test_split(data, test_percent=test_percent)
     train_data, train_labels = preparation.split_target(
-        train, feature_columns=feature_columns
+        train, feature_columns=feature_columns, all_freq=all_freq
     )
     test_data, test_labels = preparation.split_target(
-        test, feature_columns=feature_columns
+        test, feature_columns=feature_columns, all_freq=all_freq
     )
 
     if scaling == "min_max":
@@ -53,7 +58,11 @@ def prep_pipeline(
 
 
 def full_pipeline(
-    feature_columns=[], pressure_match=False, test_percent=20, scaling=None
+    feature_columns=[],
+    all_freq=True,
+    pressure_match=False,
+    test_percent=20,
+    scaling=None,
 ):
     """
     Runs the processing and preparation pipelines to return data ready for modelling
@@ -66,6 +75,7 @@ def full_pipeline(
     (train_data, test_data, train_labels, test_labels) = prep_pipeline(
         result,
         feature_columns=feature_columns,
+        all_freq=all_freq,
         pressure_match=pressure_match,
         test_percent=test_percent,
         scaling=scaling,
@@ -83,4 +93,4 @@ def modelling_pipeline(model, train_data, train_labels, test_data):
     trained_model = modelling.training(model, train_data, train_labels)
     train_predictions = modelling.predicting(trained_model, train_data)
     test_predictions = modelling.predicting(trained_model, test_data)
-    return train_predictions, test_predictions
+    return train_predictions, test_predictions, trained_model

@@ -45,7 +45,7 @@ def subject_train_test_split(data, test_percent=20):
     return train_data, test_data
 
 
-def split_target(data, feature_columns=[]):
+def split_target(data, feature_columns=[], all_freq=True):
     """
     Splits the target and the relevant features out
 
@@ -53,7 +53,10 @@ def split_target(data, feature_columns=[]):
     - Daniel
     """
     target = data["OverallPoF"]
-    features = data[[col for col in data.columns if "f(" in col] + feature_columns]
+    if all_freq:
+        features = data[[col for col in data.columns if "f(" in col] + feature_columns]
+    else:
+        features = data[feature_columns]
     return features, target
 
 
