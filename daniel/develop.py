@@ -14,7 +14,9 @@ trained_model, new_features = modelling.run_decision_tree(
     depth=4,
     splits=0.01,
     leaves=0.01,
-    path="daniel/decision_tree.png",
+    pressure=False,
+    smote=False,
+    path="daniel/decision_treeSMOTE.png",
 )
 for i in range(3):
     trained_model, new_features = modelling.run_decision_tree(
@@ -23,5 +25,7 @@ for i in range(3):
         depth=4,
         splits=0.01,
         leaves=0.01,
-        path="daniel/decision_tree" + str(i) + ".png",
+        pressure=False,
+        smote=False,
+        path="daniel/decision_treeSMOTE" + str(i) + ".png",
     )
