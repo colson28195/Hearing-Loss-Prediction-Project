@@ -4,10 +4,6 @@ from sklearn.svm import SVC
 import beluga
 
 
-def run_svm_unscaled():
-    data
-
-
 def run_svm_clf():
 
     data = pipeline.processing_pipeline()
@@ -15,7 +11,7 @@ def run_svm_clf():
         data, scaling="std_scale"
     )
 
-    model = SVC(kernel="rbf", gamma=5, C=0.001)
+    model = SVC()
 
     train_pred, test_pred, trained_model = pipeline.modelling_pipeline(
         model, train_data, train_labels, test_data
