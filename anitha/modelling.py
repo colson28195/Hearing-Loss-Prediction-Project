@@ -3,10 +3,17 @@ from tyty import pipeline
 from sklearn.svm import SVC
 import beluga
 
+
+def run_svm_unscaled():
+    data
+
+
 def run_svm_clf():
 
     data = pipeline.processing_pipeline()
-    train_data, test_data, train_labels, test_labels = pipeline.prep_pipeline(data, scaling="std_scale")
+    train_data, test_data, train_labels, test_labels = pipeline.prep_pipeline(
+        data, scaling="std_scale"
+    )
 
     model = SVC(kernel="rbf", gamma=5, C=0.001)
 
