@@ -13,15 +13,25 @@ train_data, test_data, train_labels, test_labels = pipeline.full_pipeline(
 )
 
 models = {
-    "KNeighborsClassifier": KNeighborsClassifier(),
+    # "KNeighborsClassifier": KNeighborsClassifier(),
     "RandomForestClassifier": RandomForestClassifier(
-        random_state=42, n_estimators=200, n_jobs=-1, max_leaf_nodes=4
+        # random_state=47, n_estimators=350, n_jobs=-1, max_leaf_nodes=20,bootstrap=True,min_samples_split=100,criterion="gini"
+        # ,max_features=6,max_depth=15
+        random_state=47,
+        n_estimators=350,
+        n_jobs=-1,
+        max_leaf_nodes=25,
+        bootstrap=True,
+        min_samples_split=100,
+        criterion="gini",
+        max_features=6,
+        max_depth=15,
     ),
-    "DecisionTreeClassifier": DecisionTreeClassifier(random_state=47, max_leaf_nodes=4),
+    # "DecisionTreeClassifier": DecisionTreeClassifier(random_state=47, max_leaf_nodes=4),
 }
 
 for name, model in models.items():
-    train_pred, test_pred = pipeline.modelling_pipeline(
+    train_pred, test_pred, trained_model = pipeline.modelling_pipeline(
         model, train_data, train_labels, test_data
     )
     print(name + "Model Trained.")
