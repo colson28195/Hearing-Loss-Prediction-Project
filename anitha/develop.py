@@ -1,5 +1,3 @@
-def my_function():
-    print("Hello from a function")
+from anitha import modelling
 
-
-my_function()
+trained_model = modelling.run_svm_clf()
