@@ -60,6 +60,7 @@ The steps above here are good to run on a regular basis/before making changes to
 On your local development branch, make changes and write code, then state the changes, you can use ```git status``` to check where your changes are in the Git process.
 ```
 git add .
+
 ```
 Commit the staged changed
 ```
