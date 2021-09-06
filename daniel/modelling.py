@@ -2,6 +2,7 @@ from sklearn import tree
 import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeClassifier
 import beluga
+from imblearn.over_sampling import SMOTE
 from tyty import pipeline
 
 
@@ -28,10 +29,15 @@ def save_tree(trained_model, features, path):
     fig.savefig(path)
 
 
-def run_decision_tree(features, all_freq, depth, splits, leaves, path):
+def run_decision_tree(features, all_freq, depth, splits, leaves, pressure, smote, path):
     train_data, test_data, train_labels, test_labels = pipeline.full_pipeline(
-        feature_columns=features, all_freq=all_freq
+        feature_columns=features, all_freq=all_freq, pressure_match=pressure
     )
+
+    if smote:
+        oversample = SMOTE()
+        train_data, train_labels = oversample.fit_resample(train_data, train_labels)
+
     model = DecisionTreeClassifier(
         random_state=24,
         max_depth=depth,
