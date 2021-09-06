@@ -7,8 +7,12 @@ from tyty import pipeline
 
 
 train_data, test_data, train_labels, test_labels = pipeline.full_pipeline(
-    feature_columns=["Gender", "Age"]
+    feature_columns=["Gender", "EarSide", "Age"]
 )
+
+train_data = train_data.drop(["f(315)", "f(630)", "f(6300)"], axis=1)
+test_data = test_data.drop(["f(315)", "f(630)", "f(6300)"], axis=1)
+
 
 model = LogisticRegression(penalty="l1", solver="liblinear")
 
