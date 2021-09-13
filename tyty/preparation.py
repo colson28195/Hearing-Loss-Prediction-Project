@@ -1,6 +1,7 @@
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.decomposition import PCA
 
 np.random.seed(24)
 
@@ -87,4 +88,17 @@ def min_max_scaling(train_data, test_data):
     min_max_scaler = MinMaxScaler()
     train_transformed = min_max_scaler.fit_transform(train_data)
     test_transformed = min_max_scaler.transform(test_data)
+    return train_transformed, test_transformed
+
+
+def pca(train_data, test_data):
+    """
+    Find first two principal components using PCA
+
+    Contributors:
+    - Anitha
+    """
+    pca = PCA(n_components=3)
+    train_transformed = pca.fit_transform(train_data)
+    test_transformed = pca.transform(test_data)
     return train_transformed, test_transformed
