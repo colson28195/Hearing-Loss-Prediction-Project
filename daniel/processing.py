@@ -125,8 +125,8 @@ def subject_train_test_split(data, test_percent=20):
     Splits the data so each subject is in either the train or the test set but not both
     """
     num_subs = np.unique(data["Subject"])
-    train_num = len(num_subs) * test_percent // 100
-    train_subs = np.random.choice(num_subs, train_num)
-    train_data = data[~data["Subject"].isin(train_subs)]
-    test_data = data[data["Subject"].isin(train_subs)]
+    test_num = len(num_subs) * test_percent // 100
+    test_subs = np.random.choice(num_subs, test_num)
+    train_data = data[~data["Subject"].isin(test_subs)]
+    test_data = data[data["Subject"].isin(test_subs)]
     return train_data, test_data
