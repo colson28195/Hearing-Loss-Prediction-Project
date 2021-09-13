@@ -30,6 +30,7 @@ def prep_pipeline(
     pressure_match=False,
     test_percent=20,
     scaling=None,
+    pca=False,
 ):
     """
     Runs the preparation pipeline
@@ -53,6 +54,9 @@ def prep_pipeline(
         train_data, test_data = preparation.min_max_scaling(train_data, test_data)
     elif scaling == "std_scale":
         train_data, test_data = preparation.standard_scaling(train_data, test_data)
+
+    if pca:
+        train_data, test_data = preparation.pca(train_data, test_data)
 
     return (train_data, test_data, train_labels, test_labels)
 
