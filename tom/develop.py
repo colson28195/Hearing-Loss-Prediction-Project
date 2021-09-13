@@ -1,36 +1,22 @@
-import pandas as pd
+# activate venv before running the code
+from tom import modelling
 
-import daniel.processing as ps
+modelling.run_svm_clf()
 
-pd.set_option("display.max_rows", None)
+#                  Machine Learning Model Summary
+# =================================================================
+# | Label    Accuracy     Precision    Sensitivity   Specificity  |
+# |   0       0.8808        1.0000        0.8736        1.0000    |
+# |   1       0.8808        0.3235        1.0000        0.8736    |
+# -----------------------------------------------------------------
+# =================================================================
 
-result = ps.run_pipeline()
+# --- TEST ---
 
-features, target = ps.split_target(result, ["Gender", "EarSide"])
-
-# print(features.head())
-# print(len(result))
-
-
-def match_pressures(data):
-    """
-    Extract the rows where the Pressure matches the AdultAbsorbanceData as closely as possible
-    """
-    cols = [
-        col
-        for col in data.columns
-        if col not in ["Subject", "AdultAbsorbanceData", "Pressure", "EarSide"]
-    ]
-    smaller = data.drop(columns=cols)
-    smaller["abs"] = abs(smaller["AdultAbsorbanceData"] - smaller["Pressure"])
-    grouped = (
-        smaller.loc[smaller.groupby(["Subject", "EarSide"])["abs"].idxmin()]
-        .reset_index(drop=True)
-        .drop(columns="abs")
-    )
-    return grouped.merge(
-        data, on=["Subject", "EarSide", "AdultAbsorbanceData", "Pressure"], how="inner"
-    ).reset_index(drop=True)
-
-
-# match_pressures(result)
+#                  Machine Learning Model Summary
+# =================================================================
+# | Label    Accuracy     Precision    Sensitivity   Specificity  |
+# |   0       0.9048        1.0000        0.9048        0.0000    |
+# -----------------------------------------------------------------
+# |                Total Model Accuracy =  0.9048                 |
+# =================================================================
