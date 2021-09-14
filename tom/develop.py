@@ -1,7 +1,7 @@
 # activate venv before running the code
 from tom import modelling
 
-modelling.run_svm_clf()
+trained_model, new_features = modelling.run_svm_clf()
 
 #                  Machine Learning Model Summary
 # =================================================================
