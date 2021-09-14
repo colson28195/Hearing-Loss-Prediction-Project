@@ -19,7 +19,7 @@ def predicting(trained_model, data):
     return trained_model.predict(data)
 
 
-def show_importances(model, train_data, threshold=0.0):
+def show_importances(model, features, threshold=0.0):
     """
     Returns the features that have an importance greater than the threshold
 
@@ -28,7 +28,7 @@ def show_importances(model, train_data, threshold=0.0):
     """
     importances = [
         (feature, round(importance, 4))
-        for feature, importance in zip(train_data.columns, model.feature_importances_)
+        for feature, importance in zip(features, model.feature_importances_)
         if importance > threshold
     ]
     importances.sort(key=lambda x: x[1], reverse=True)

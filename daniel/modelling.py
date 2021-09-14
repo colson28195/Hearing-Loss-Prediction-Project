@@ -23,11 +23,11 @@ def predicting(trained_model, test_data):
     return trained_model.predict(test_data)
 
 
-def show_importances(model, train_data, threshold=0.0):
+def show_importances(model, features, threshold=0.0):
     """ Returns the features that have an importance greater than the threshold """
     importances = [
         (feature, round(importance, 4))
-        for feature, importance in zip(train_data.columns, model.feature_importances_)
+        for feature, importance in zip(features, model.feature_importances_)
         if importance > threshold
     ]
     importances.sort(key=lambda x: x[1], reverse=True)
@@ -43,7 +43,7 @@ def save_tree(trained_model, features, path):
 
 
 def run_decision_tree(features, all_freq, depth, splits, leaves, pressure, smote, path):
-    train_data, test_data, train_labels, test_labels = pipeline.full_pipeline(
+    train_data, test_data, train_labels, test_labels, features = pipeline.full_pipeline(
         feature_columns=features, all_freq=all_freq, pressure_match=pressure
     )
 
@@ -73,7 +73,7 @@ def run_decision_tree(features, all_freq, depth, splits, leaves, pressure, smote
     beluga.metrics.summary(test_labels, test_pred, conditions=True)
     save_tree(trained_model, train_data.columns, path=path)
 
-    new_features = show_importances(trained_model, train_data)
+    new_features = show_importances(trained_model, features)
 
     print("--- IMPORTANCES ---")
     print(new_features)
