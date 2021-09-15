@@ -6,6 +6,7 @@ import beluga
 from sklearn.model_selection import GridSearchCV
 
 from tyty import pipeline
+from tyty.modelling import show_importances
 
 
 def run_svm_clf():
@@ -35,3 +36,10 @@ def run_svm_clf():
     # grid.fit(train_data,train_labels)
     # #SVC(C=5, gamma=0.005)
     # print(grid.best_estimator_)
+
+    new_features = show_importances(trained_model, train_data)
+
+    print("--- IMPORTANCES ---")
+    print(new_features)
+
+    return trained_model, new_features
