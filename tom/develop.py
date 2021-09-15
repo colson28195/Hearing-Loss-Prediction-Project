@@ -1,7 +1,12 @@
 # activate venv before running the code
 from tom import modelling
 
-trained_model, new_features = modelling.run_svm_clf()
+trained_model, features = modelling.run_svm_clf()
+
+features_names = features
+# svm = svm.SVC(kernel='linear')
+# svm.fit(X, Y)
+modelling.f_importances(trained_model.coef_, features_names)
 
 #                  Machine Learning Model Summary
 # =================================================================

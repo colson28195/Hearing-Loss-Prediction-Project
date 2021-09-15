@@ -4,9 +4,11 @@ import sklearn
 from sklearn.svm import SVC
 import beluga
 from sklearn.model_selection import GridSearchCV
+from matplotlib import pyplot as plt
 
 from tyty import pipeline
-from tyty.modelling import show_importances
+
+# from tyty.modelling import show_importances
 
 
 def run_svm_clf():
@@ -14,13 +16,15 @@ def run_svm_clf():
     # pd.set_option("display.max_rows", None)
     # np.random.seed(24)
 
-    train_data, test_data, train_labels, test_labels = pipeline.full_pipeline(
-        feature_columns=["Gender", "EarSide", "Age"],
-        pressure_match=True,
-        scaling="std_scale",
+    train_data, test_data, train_labels, test_labels, features = pipeline.full_pipeline(
+        feature_columns=[],
+        scaling=None,
+        all_freq=True,
+        pressure_match=False,
+        test_percent=20,
     )
-    print(type(train_data))
-    model = SVC(C=5, gamma=0.005)
+    # print(type(train_data))
+    model = SVC(C=5, gamma=0.005, kernel="linear")
 
     train_pred, test_pred, trained_model = pipeline.modelling_pipeline(
         model, train_data, train_labels, test_data
@@ -36,10 +40,15 @@ def run_svm_clf():
     # grid.fit(train_data,train_labels)
     # #SVC(C=5, gamma=0.005)
     # print(grid.best_estimator_)
+    return trained_model, features
 
-    new_features = show_importances(trained_model, train_data)
 
-    print("--- IMPORTANCES ---")
-    print(new_features)
+def f_importances(coef, names):
+    imp = coef
+    imp, names = zip(*sorted(zip(imp, names)))
+    plt.barh(range(len(names)), imp, align="center")
+    plt.yticks(range(len(names)), names)
+    plt.show()
 
-    return trained_model, new_features
+
+# np.vectorize(f)
