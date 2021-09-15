@@ -49,6 +49,7 @@ def prep_pipeline(
     test_data, test_labels = preparation.split_target(
         test, feature_columns=feature_columns, all_freq=all_freq
     )
+    features = train_data.columns
 
     if scaling == "min_max":
         train_data, test_data = preparation.min_max_scaling(train_data, test_data)
@@ -58,7 +59,7 @@ def prep_pipeline(
     if pca:
         train_data, test_data = preparation.pca(train_data, test_data)
 
-    return (train_data, test_data, train_labels, test_labels)
+    return (train_data, test_data, train_labels, test_labels, features)
 
 
 def full_pipeline(
@@ -76,7 +77,7 @@ def full_pipeline(
     - Di
     """
     result = processing_pipeline()
-    (train_data, test_data, train_labels, test_labels) = prep_pipeline(
+    (train_data, test_data, train_labels, test_labels, features) = prep_pipeline(
         result,
         feature_columns=feature_columns,
         all_freq=all_freq,
@@ -84,7 +85,7 @@ def full_pipeline(
         test_percent=test_percent,
         scaling=scaling,
     )
-    return (train_data, test_data, train_labels, test_labels)
+    return (train_data, test_data, train_labels, test_labels, features)
 
 
 def modelling_pipeline(model, train_data, train_labels, test_data):

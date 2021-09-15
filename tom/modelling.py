@@ -19,7 +19,7 @@ def run_svm_clf():
         pressure_match=True,
         scaling="std_scale",
     )
-
+    print(type(train_data))
     model = SVC(C=5, gamma=0.005)
 
     train_pred, test_pred, trained_model = pipeline.modelling_pipeline(

@@ -102,8 +102,9 @@ def prep_pipeline(data, feature_columns=[], pressure_match=False, test_size=0.2)
     test_data, test_labels = preparation.split_target(
         test, feature_columns=["Gender", "EarSide", "Age"]
     )
+    features = train_data.columns
 
-    return train_data, test_data, train_labels, test_labels
+    return train_data, test_data, train_labels, test_labels, features
 
 
 def full_pipeline(feature_columns=[], pressure_match=False, test_percent=20):
@@ -111,13 +112,13 @@ def full_pipeline(feature_columns=[], pressure_match=False, test_percent=20):
     Runs the processing and preparation pipelines to return data ready for modelling
     """
     result = processing_pipeline()
-    train_data, test_data, train_labels, test_labels = prep_pipeline(
+    train_data, test_data, train_labels, test_labels, features = prep_pipeline(
         result,
         feature_columns=feature_columns,
         pressure_match=pressure_match,
         test_percent=test_percent,
     )
-    return train_data, test_data, train_labels, test_labels
+    return train_data, test_data, train_labels, test_labels, features
 
 
 def subject_train_test_split(data, test_percent=20):
