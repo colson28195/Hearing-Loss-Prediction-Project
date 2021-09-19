@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-
 from daniel import modelling
 
 pd.set_option("display.max_rows", None)
