@@ -43,11 +43,11 @@ def run_svm_clf():
     return trained_model, features
 
 
-def f_importances(coef, names):
-    imp = coef
-    imp, names = zip(*sorted(zip(imp, names)))
-    plt.barh(range(len(names)), imp, align="center")
-    plt.yticks(range(len(names)), names)
+def f_importances(names, coef):
+    results = sorted(zip(names, coef), key=lambda x: x[1], reverse=True)
+    imp = [i[1] for i in results]
+    names = [n[0] for n in results]
+    plt.barh(range(len(names)), imp, align="center", tick_label=names)
     plt.show()
 
 

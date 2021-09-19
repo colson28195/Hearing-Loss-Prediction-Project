@@ -6,7 +6,7 @@ trained_model, features = modelling.run_svm_clf()
 features_names = features
 # svm = svm.SVC(kernel='linear')
 # svm.fit(X, Y)
-modelling.f_importances(trained_model.coef_, features_names)
+modelling.f_importances(features, trained_model.coef_[0])
 
 #                  Machine Learning Model Summary
 # =================================================================
