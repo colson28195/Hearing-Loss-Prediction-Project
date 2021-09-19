@@ -17,7 +17,7 @@ def run_svm_clf():
     # np.random.seed(24)
 
     train_data, test_data, train_labels, test_labels, features = pipeline.full_pipeline(
-        feature_columns=[],
+        feature_columns=["Gender", "Age", "EarSide", "Pressure"],
         scaling=None,
         all_freq=True,
         pressure_match=False,
