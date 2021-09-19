@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import beluga
 
-from tyty import pipeline
 from daniel import modelling
 
 pd.set_option("display.max_rows", None)
