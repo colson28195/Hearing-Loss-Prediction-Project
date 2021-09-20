@@ -10,10 +10,10 @@ def run_svm_clf():
 
     data = pipeline.processing_pipeline()
     train_data, test_data, train_labels, test_labels = pipeline.prep_pipeline(
-        data, pressure_match=True, scaling="std_scale", pca=True
+        data, scaling="std_scale", pca=True
     )
 
-    model = SVC()
+    model = SVC(C=10, kernel="rbf", gamma=0.01)
 
     train_pred, test_pred, trained_model = pipeline.modelling_pipeline(
         model, train_data, train_labels, test_data
@@ -31,13 +31,16 @@ def run_grid_search_cv():
 
     data = pipeline.processing_pipeline()
     train_data, test_data, train_labels, test_labels = pipeline.prep_pipeline(
-        data, pressure_match=True, scaling="std_scale", pca=False
+        data,
+        feature_columns=["Gender", "EarSide", "Age"],
+        scaling="std_scale",
+        pca=False,
     )
 
     parameters = {
         "C": [0.1, 1, 10, 100, 1000],
         "gamma": [1, 0.1, 0.01, 0.001, 0.0001],
-        "kernel": ["linear", "rbf"],
+        "kernel": ["linear"],
     }
 
     grid = GridSearchCV(SVC(), parameters, refit=True, verbose=3)
@@ -46,7 +49,7 @@ def run_grid_search_cv():
         grid, train_data, train_labels, test_data
     )
 
-    print("---ACCURACY---")
+    print("---BEST SCORE---")
     print(trained_model.best_score_)
     print("---BEST ESTIMATOR---")
     print(grid.best_estimator_)

@@ -2,6 +2,9 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+from ipywidgets import interact
 
 np.random.seed(24)
 
@@ -91,7 +94,7 @@ def min_max_scaling(train_data, test_data):
     return train_transformed, test_transformed
 
 
-def pca(train_data, test_data):
+def pca(train_data, train_labels, test_data):
     """
     Find first two principal components using PCA
 
@@ -100,5 +103,36 @@ def pca(train_data, test_data):
     """
     pca = PCA(n_components=3)
     train_transformed = pca.fit_transform(train_data)
+    feat_var = np.var(train_transformed, axis=0)
+    feat_var_rat = feat_var / (np.sum(feat_var))
+    print("Variance Ratio of 4 PCs: ", feat_var_rat)
     test_transformed = pca.transform(test_data)
+
+    Xax = train_transformed[:, 0]
+    Yax = train_transformed[:, 1]
+    labels = train_labels
+    cdict = {0: "red", 1: "green"}
+    labl = {0: "0", 1: "1"}
+    marker = {0: "*", 1: "o"}
+    alpha = {0: 0.3, 1: 0.5}
+
+    fig, ax = plt.subplots(figsize=(7, 5))
+    fig.patch.set_facecolor("white")
+    for l in np.unique(labels):
+        ix = np.where(labels == l)
+        ax.scatter(
+            Xax[ix],
+            Yax[ix],
+            c=cdict[l],
+            s=40,
+            label=labl[l],
+            marker=marker[l],
+            alpha=alpha[l],
+        )
+
+    plt.xlabel("First Principal Component", fontsize=14)
+    plt.ylabel("Second Principal Component", fontsize=14)
+    plt.legend()
+    plt.show()
+
     return train_transformed, test_transformed
