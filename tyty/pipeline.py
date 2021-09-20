@@ -56,7 +56,7 @@ def prep_pipeline(
         train_data, test_data = preparation.standard_scaling(train_data, test_data)
 
     if pca:
-        train_data, test_data = preparation.pca(train_data, test_data)
+        train_data, test_data = preparation.pca(train_data, train_labels, test_data)
 
     return (train_data, test_data, train_labels, test_labels)
 
