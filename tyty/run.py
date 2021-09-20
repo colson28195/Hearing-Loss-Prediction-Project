@@ -13,7 +13,5 @@ trained_model, new_features = modelling.run_decision_tree(
     splits=0.05,
     leaves=0.05,
     pressure=True,
-    # smote=False,
-    # ada=False,
-    path="daniel/images/decision_tree_X.png",
+    path="tyty/images/decision_tree.png",
 )

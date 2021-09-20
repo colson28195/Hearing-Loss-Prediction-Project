@@ -32,10 +32,11 @@ def show_importances(model, features, threshold=0.0):
         if importance > threshold
     ]
     importances.sort(key=lambda x: x[1], reverse=True)
-    return [imp[0] for imp in importances]
+    return [imp for imp in importances]
 
 
 def save_tree(trained_model, features, path):
+    """ Saves the Decision Tree image """
     fig = plt.figure(figsize=(25, 20))
     _ = tree.plot_tree(
         trained_model, feature_names=features, class_names=["0", "1"], filled=True
@@ -46,6 +47,7 @@ def save_tree(trained_model, features, path):
 def run_decision_tree(
     features, all_freq, depth, splits, leaves, pressure, smote, ada, path
 ):
+    """ Runs the Decision Tree and returns the model"""
     train_data, test_data, train_labels, test_labels, features = pipeline.full_pipeline(
         feature_columns=features, all_freq=all_freq, pressure_match=pressure
     )
@@ -77,6 +79,7 @@ def run_decision_tree(
     beluga.metrics.summary(train_labels, train_pred, conditions=True)
     print("--- TEST ---")
     beluga.metrics.summary(test_labels, test_pred, conditions=True)
+
     if not ada:
         save_tree(trained_model, train_data.columns, path=path)
 
@@ -85,4 +88,4 @@ def run_decision_tree(
     print("--- IMPORTANCES ---")
     print(new_features)
 
-    return trained_model, new_features
+    return trained_model, [n[0] for n in new_features]
