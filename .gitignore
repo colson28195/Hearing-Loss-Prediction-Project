@@ -130,4 +130,5 @@ dmypy.json
 
 # MISC
 .DS_Store
+.vscode/
 file:
