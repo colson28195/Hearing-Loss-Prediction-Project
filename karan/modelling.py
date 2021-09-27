@@ -1,7 +1,12 @@
 import matplotlib.pyplot as plt
+import numpy as np
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import cross_validate
 import beluga
 from tyty import pipeline
+import tyty.modelling
+
+np.random.seed(24)
 
 
 def run_rf(
@@ -17,7 +22,7 @@ def run_rf(
     max_features,
     max_depth,
 ):
-    train_data, test_data, train_labels, test_labels = pipeline.full_pipeline(
+    train_data, test_data, train_labels, test_labels, features = pipeline.full_pipeline(
         feature_columns=features, all_freq=all_freq
     )
     model = RandomForestClassifier(
@@ -31,6 +36,13 @@ def run_rf(
         max_features=max_features,
         max_depth=max_depth,
     )
+    # added in cross validation
+    scores = cross_validate(
+        model, train_data, train_labels, cv=10, return_train_score=True
+    )
+    print("Cross-Validated Train: ", np.mean(scores["train_score"]))
+    print("Cross-Validated Test: ", np.mean(scores["test_score"]))
+
     train_pred, test_pred, trained_model = pipeline.modelling_pipeline(
         model, train_data, train_labels, test_data
     )
@@ -40,15 +52,11 @@ def run_rf(
     print("--- TEST ---")
     beluga.metrics.summary(test_labels, test_pred, conditions=True)
 
-    importances = [
-        (feature, round(importance, 4))
-        for feature, importance in zip(
-            train_data.columns, trained_model.feature_importances_
-        )
-        if importance > 0.09
-    ]
+    new_features = tyty.modelling.show_importances(
+        trained_model, features, threshold=0.09
+    )
+
     print("--- IMPORTANCES ---")
-    print(sorted(importances, key=lambda x: x[1], reverse=True))
-    new_features = [imp[0] for imp in importances]
+    print(new_features)
 
     return trained_model, new_features
