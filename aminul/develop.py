@@ -22,9 +22,9 @@ train_pred, test_pred, trained_model = pipeline.modelling_pipeline(
 beluga.metrics.summary(train_labels, train_pred, conditions=True)
 beluga.metrics.summary(test_labels, test_pred, conditions=True)
 
-# importance = model.coef_[0]
-# feature_importance = abs(model.coef_[0])
-# feature_importance = 100.0 * (feature_importance / feature_importance.max())
+importance = model.coef_[0]
+feature_importance = abs(model.coef_[0])
+feature_importance = 100.0 * (feature_importance / feature_importance.max())
 
 
-# print(feature_importance )
+print(feature_importance)
