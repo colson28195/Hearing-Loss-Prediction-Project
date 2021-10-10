@@ -11,7 +11,7 @@ train_data, test_data, train_labels, test_labels, features = pipeline.full_pipel
     feature_columns=["Gender", "EarSide", "Age"]
 )
 
-model = DecisionTreeClassifier(random_state=0)
+model = DecisionTreeClassifier(max_depth=5, random_state=0)
 
 train_pred, test_pred, trained_model = pipeline.modelling_pipeline(
     model, train_data, train_labels, test_data

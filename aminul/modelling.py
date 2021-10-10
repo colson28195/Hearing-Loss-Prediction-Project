@@ -1,14 +1,32 @@
 import pandas as pd
-
-from sklearn.model_selection import train_test_split
-
+import numpy as np
+from sklearn.linear_model import LogisticRegression
+import beluga
 from tyty import pipeline
 
-result = pipeline.processing_pipeline()
 
-features, target = pipeline.split_target(result, ["Gender", "EarSide", "Age"])
+train_data, test_data, train_labels, test_labels, features = pipeline.full_pipeline(
+    feature_columns=["Gender", "EarSide", "Age"]
+)
 
-# print(features)
-# Data typedescription:
+# train_data = train_data.drop(["f(250)", "f(400)", "f(2500)"], axis=1)
+# test_data = test_data.drop(["f(250)", "f(400)", "f(2500)"], axis=1)
 
-print(features)
+
+model = LogisticRegression(penalty="l2", solver="liblinear", C=10.0)
+
+train_pred, test_pred, trained_model = pipeline.modelling_pipeline(
+    model, train_data, train_labels, test_data
+)
+print("Result with Training set:")
+beluga.metrics.summary(train_labels, train_pred, conditions=True)
+print("Result with Test set:")
+
+beluga.metrics.summary(test_labels, test_pred, conditions=True)
+print("Feature importance:")
+importance = model.coef_[0]
+feature_importance = abs(model.coef_[0])
+feature_importance = 100.0 * (feature_importance / feature_importance.max())
+
+
+print(feature_importance)
