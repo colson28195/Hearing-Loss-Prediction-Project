@@ -2,7 +2,7 @@ K-Nearest Neighbors (KNN) algorithm assumes that similar data points are close t
 
 Choosing the optimal number for k is a tricky task in KNN algorithm. The optimal value of k can be identified when test error stabilizes and is low. To find the optimal value of k, an error curve was plotted, whcih showed that the optimal value of k is 116 for the WBT dataset. With k=116, the test model accuracy is 0.8949 and train model accuracy of 0.872.
 
-![error_curve](di/error_curve_with_different_k.png)
+![error_curve](error_curve_with_different_k.png)
 
 Disadvantages of KNN:
 -	Choosing the optimal number for k can be tricky, a low value of k could lead to overfitting problems while a high value of k could lead to underfitting.
