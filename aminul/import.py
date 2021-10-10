@@ -2,11 +2,12 @@ import pandas as pd
 
 from tyty import pipeline
 
-result = pipeline.run_pipeline()
 
-features, target = pipeline.split_target(result, ["Gender", "EarSide", "Age"])
+train_data, test_data, train_labels, test_labels, features = pipeline.full_pipeline(
+    feature_columns=["Gender", "EarSide", "Age"]
+)
+print(train_data)
 
-# print(features)
 # Data typedescription:
-data_type = features.describe()
-print(data_type)
+# data_type = features.describe()
+# print(data_type)
