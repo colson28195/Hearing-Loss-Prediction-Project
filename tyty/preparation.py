@@ -105,7 +105,7 @@ def pca(train_data, train_labels, test_data):
     train_transformed = pca.fit_transform(train_data)
     feat_var = np.var(train_transformed, axis=0)
     feat_var_rat = feat_var / (np.sum(feat_var))
-    print("Variance Ratio of 4 PCs: ", feat_var_rat)
+    print("Variance Ratio of 3 PCs: ", feat_var_rat)
     test_transformed = pca.transform(test_data)
 
     Xax = train_transformed[:, 0]
@@ -133,6 +133,6 @@ def pca(train_data, train_labels, test_data):
     plt.xlabel("First Principal Component", fontsize=14)
     plt.ylabel("Second Principal Component", fontsize=14)
     plt.legend()
-    plt.show()
+    plt.savefig("pca.png")
 
     return train_transformed, test_transformed

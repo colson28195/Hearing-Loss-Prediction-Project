@@ -9,8 +9,8 @@ import beluga
 def run_svm_clf():
 
     data = pipeline.processing_pipeline()
-    train_data, test_data, train_labels, test_labels = pipeline.prep_pipeline(
-        data, scaling="std_scale", pca=True
+    train_data, test_data, train_labels, test_labels, features = pipeline.prep_pipeline(
+        data, scaling="std_scale", pca=False
     )
 
     model = SVC(C=10, kernel="rbf", gamma=0.01)
