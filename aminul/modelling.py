@@ -13,7 +13,7 @@ train_data, test_data, train_labels, test_labels, features = pipeline.full_pipel
 # test_data = test_data.drop(["f(250)", "f(400)", "f(2500)"], axis=1)
 
 
-model = LogisticRegression(penalty="l2", solver="newton-cg", C=10.0)
+model = LogisticRegression(penalty="l1", solver="liblinear")
 
 train_pred, test_pred, trained_model = pipeline.modelling_pipeline(
     model, train_data, train_labels, test_data
